@@ -10,49 +10,47 @@
 
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <a href="index.html" class="font-bold text-lg text-emerald-600">Supabyoi Docs</a>
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-xl font-bold text-gray-900 hover:text-emerald-600 transition-colors">Supabyoi Docs</a>
+        </div>
 
         <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center space-x-6 text-sm">
-          <a href="getting-started.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Getting Started</a>
-          <a href="vm-setup.html" class="text-gray-600 hover:text-emerald-600 transition-colors">VM Setup</a>
-          <a href="ssh-troubleshooting.html" class="text-gray-600 hover:text-emerald-600 transition-colors">SSH Troubleshooting</a>
-          <a href="deployment.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Deployment</a>
-          <a href="features.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Features</a>
-          <a href="security.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Security</a>
-          <a href="faq.html" class="text-gray-600 hover:text-emerald-600 transition-colors">FAQ</a>
-          <a href="roadmap.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Roadmap</a>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="getting-started.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Getting Started</a>
+          <a href="vm-setup.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">VM Setup</a>
+          <a href="ssh-troubleshooting.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">SSH Troubleshooting</a>
+          <a href="deployment.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Deployment</a>
+          <a href="features.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Features</a>
+          <a href="security.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Security</a>
+          <a href="faq.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">FAQ</a>
+          <a href="roadmap.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Roadmap</a>
         </div>
 
         <!-- Mobile hamburger -->
-        <button
-          id="menu-btn"
-          class="md:hidden p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-        >
-          <svg id="icon-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg id="icon-close" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+        <div class="md:hidden">
+          <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-emerald-600 hover:bg-gray-100 focus:outline-none transition-colors" aria-label="Toggle menu">
+            <svg id="icon-open" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-close" class="hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-1">
-        <a href="getting-started.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Getting Started</a>
-        <a href="vm-setup.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">VM Setup</a>
-        <a href="ssh-troubleshooting.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">SSH Troubleshooting</a>
-        <a href="deployment.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Deployment</a>
-        <a href="features.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Features</a>
-        <a href="security.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Security</a>
-        <a href="faq.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">FAQ</a>
-        <a href="roadmap.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Roadmap</a>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 py-3 space-y-1">
+        <a href="getting-started.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Getting Started</a>
+        <a href="vm-setup.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">VM Setup</a>
+        <a href="ssh-troubleshooting.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">SSH Troubleshooting</a>
+        <a href="deployment.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Deployment</a>
+        <a href="features.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Features</a>
+        <a href="security.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Security</a>
+        <a href="faq.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">FAQ</a>
+        <a href="roadmap.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Roadmap</a>
       </div>
     </div>
   </nav>
@@ -63,7 +61,7 @@
     <!-- Hero -->
     <section class="text-center mb-16">
       <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
-        Supabyoi Documentation
+        Your Supabase, Your Server
       </h1>
       <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
         Self-hosted Supabase on your own VPS &mdash; deployed in minutes, managed with ease.
@@ -165,6 +163,34 @@
           </div>
         </a>
 
+        <a href="faq.html" class="block border border-gray-200 rounded-lg p-6 hover:border-emerald-500 transition-colors group">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-emerald-50 rounded-md flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-1">FAQ</h3>
+              <p class="text-sm text-gray-600">Common questions and answers</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="roadmap.html" class="block border border-gray-200 rounded-lg p-6 hover:border-emerald-500 transition-colors group">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-emerald-50 rounded-md flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-1">Roadmap</h3>
+              <p class="text-sm text-gray-600">What's shipped and what's coming next</p>
+            </div>
+          </div>
+        </a>
+
       </div>
     </section>
 
@@ -172,12 +198,12 @@
 
   <!-- Footer -->
   <footer class="border-t border-gray-200 mt-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-        <p>Built by Supabyoi</p>
-        <div class="flex items-center space-x-4">
-          <a href="https://app.supabyoi.com" class="hover:text-emerald-600 transition-colors">App</a>
-          <a href="https://supabyoi.com" class="hover:text-emerald-600 transition-colors">Website</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-500">Built by Supabyoi</p>
+        <div class="flex items-center gap-6">
+          <a href="https://app.supabyoi.com" class="text-sm text-gray-500 hover:text-emerald-600 transition-colors">app.supabyoi.com</a>
+          <a href="https://supabyoi.com" class="text-sm text-gray-500 hover:text-emerald-600 transition-colors">supabyoi.com</a>
         </div>
       </div>
     </div>

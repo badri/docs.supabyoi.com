@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap - Supabyoi Docs</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-xl font-bold text-gray-900 hover:text-emerald-600 transition-colors">Supabyoi Docs</a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="getting-started.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Getting Started</a>
+          <a href="vm-setup.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">VM Setup</a>
+          <a href="ssh-troubleshooting.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">SSH Troubleshooting</a>
+          <a href="deployment.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Deployment</a>
+          <a href="features.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Features</a>
+          <a href="security.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">Security</a>
+          <a href="faq.html" class="text-sm font-medium text-gray-600 hover:text-emerald-600 transition-colors">FAQ</a>
+          <a href="roadmap.html" class="text-sm text-emerald-600 font-semibold">Roadmap</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <div class="md:hidden">
+          <button id="hamburger-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-emerald-600 hover:bg-gray-100 focus:outline-none transition-colors" aria-label="Toggle menu">
+            <svg id="icon-open" class="block h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-close" class="hidden h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 py-3 space-y-1">
+        <a href="getting-started.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Getting Started</a>
+        <a href="vm-setup.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">VM Setup</a>
+        <a href="ssh-troubleshooting.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">SSH Troubleshooting</a>
+        <a href="deployment.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Deployment</a>
+        <a href="features.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Features</a>
+        <a href="security.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">Security</a>
+        <a href="faq.html" class="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-emerald-600 hover:bg-gray-50 rounded-md transition-colors">FAQ</a>
+        <a href="roadmap.html" class="block px-3 py-2 text-sm text-emerald-600 font-semibold bg-emerald-50 rounded-md">Roadmap</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header -->
+    <div class="mb-12">
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-3">Roadmap</h1>
+      <p class="text-lg text-gray-500">What we're building next. Features are shipped roughly in the order shown.</p>
+    </div>
+
+    <!-- Now: Shipped -->
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-emerald-100 text-emerald-800">Shipped</span>
+        <div class="flex-1 h-px bg-gray-200"></div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="border border-gray-200 rounded-lg p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-semibold text-gray-900">One-click Supabase deployment</h3>
+              <p class="text-sm text-gray-600 mt-1">Deploy a full Supabase stack (Postgres, Auth, Storage, Realtime, PostgREST, Kong, Studio) to your own VPS with a single click.</p>
+            </div>
+            <span class="flex-shrink-0 text-emerald-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-semibold text-gray-900">Automatic VM hardening</h3>
+              <p class="text-sm text-gray-600 mt-1">Dedicated SSH user, firewall rules, fail2ban, and SSH port rotation applied automatically after VM registration.</p>
+            </div>
+            <span class="flex-shrink-0 text-emerald-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-semibold text-gray-900">TLS with Cloudflare Origin CA</h3>
+              <p class="text-sm text-gray-600 mt-1">Wildcard TLS certificates provisioned automatically. All traffic encrypted end-to-end via Cloudflare proxy.</p>
+            </div>
+            <span class="flex-shrink-0 text-emerald-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-semibold text-gray-900">Real-time deployment logs</h3>
+              <p class="text-sm text-gray-600 mt-1">Live streaming progress from the Go agent via SSH. Every deployment step logged with status and timing.</p>
+            </div>
+            <span class="flex-shrink-0 text-emerald-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-semibold text-gray-900">Supabase Studio access</h3>
+              <p class="text-sm text-gray-600 mt-1">Each instance gets its own Studio UI at a dedicated subdomain for managing tables, auth, storage, and SQL.</p>
+            </div>
+            <span class="flex-shrink-0 text-emerald-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-semibold text-gray-900">Multi-instance support</h3>
+              <p class="text-sm text-gray-600 mt-1">Run multiple isolated Supabase instances on a single VM with automatic port allocation.</p>
+            </div>
+            <span class="flex-shrink-0 text-emerald-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-semibold text-gray-900">Instance stop / start / redeploy</h3>
+              <p class="text-sm text-gray-600 mt-1">Manage instance lifecycle from the dashboard. Stop to save resources, start when ready, redeploy to pick up changes.</p>
+            </div>
+            <span class="flex-shrink-0 text-emerald-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Up Next -->
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-amber-100 text-amber-800">Up Next</span>
+        <div class="flex-1 h-px bg-gray-200"></div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="border border-amber-200 bg-amber-50/30 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Credential rotation</h3>
+          <p class="text-sm text-gray-600 mt-1">One-click rotation for JWT secrets, API keys, and database passwords. Backend is ready &mdash; UI wiring in progress.</p>
+        </div>
+
+        <div class="border border-amber-200 bg-amber-50/30 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Automated database backups</h3>
+          <p class="text-sm text-gray-600 mt-1">Scheduled pg_dump over SSH to Cloudflare R2. Hourly cadence with configurable retention. Restore from any snapshot.</p>
+        </div>
+
+        <div class="border border-amber-200 bg-amber-50/30 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Supabase version upgrades</h3>
+          <p class="text-sm text-gray-600 mt-1">Upgrade your Supabase stack to the latest version from the dashboard. Rolling updates with automatic rollback on failure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Later -->
+    <section class="mb-12">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-gray-100 text-gray-700">Later</span>
+        <div class="flex-1 h-px bg-gray-200"></div>
+      </div>
+
+      <div class="space-y-4">
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Resource monitoring</h3>
+          <p class="text-sm text-gray-600 mt-1">CPU, memory, and disk usage metrics per instance. Service health checks and uptime tracking in the dashboard.</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Custom domains</h3>
+          <p class="text-sm text-gray-600 mt-1">Bring your own domain instead of using *.supabyoi.com subdomains. Automatic TLS provisioning for custom domains.</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Team collaboration</h3>
+          <p class="text-sm text-gray-600 mt-1">Invite team members with role-based access. View-only, operator, and admin roles for shared VM management.</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Alerting and notifications</h3>
+          <p class="text-sm text-gray-600 mt-1">Get notified when instances go down, deployments fail, or disk usage exceeds thresholds. Email and webhook integrations.</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Bring your own cloud</h3>
+          <p class="text-sm text-gray-600 mt-1">Connect your AWS, GCP, or Azure account and let Supabyoi provision and manage VMs for you.</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">Read-only replicas with hot switchover</h3>
+          <p class="text-sm text-gray-600 mt-1">Add read replicas to distribute query load across multiple Postgres instances. Automatic hot switchover promotes a replica to primary with zero downtime if the primary fails.</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">MCP server for Supabase instances</h3>
+          <p class="text-sm text-gray-600 mt-1">A custom MCP server that lets AI assistants interact with your Supabase instances directly &mdash; query data, manage schemas, inspect logs, and run migrations through natural language.</p>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-5">
+          <h3 class="font-semibold text-gray-900">API</h3>
+          <p class="text-sm text-gray-600 mt-1">Programmatic access to manage VMs, instances, deployments, and credentials. Build your own integrations, CI/CD pipelines, and automation workflows.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="border border-gray-200 rounded-lg p-6 text-center bg-gray-50">
+      <p class="text-gray-600 mb-3">Have a feature request? We'd love to hear from you.</p>
+      <a href="mailto:hello@supabyoi.com" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm">Get in Touch</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 py-8 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-500">Built by Supabyoi</p>
+        <div class="flex items-center gap-6">
+          <a href="https://app.supabyoi.com" class="text-sm text-gray-500 hover:text-emerald-600 transition-colors">app.supabyoi.com</a>
+          <a href="https://supabyoi.com" class="text-sm text-gray-500 hover:text-emerald-600 transition-colors">supabyoi.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu JS -->
+  <script>
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    btn.addEventListener('click', function () {
+      const isHidden = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !isHidden);
+      iconOpen.classList.toggle('hidden', isHidden);
+      iconClose.classList.toggle('hidden', !isHidden);
+    });
+  </script>
+
+</body>
+</html>
