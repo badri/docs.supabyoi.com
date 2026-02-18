@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supabyoi Docs</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="font-bold text-lg text-emerald-600">Supabyoi Docs</a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-6 text-sm">
+          <a href="getting-started.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Getting Started</a>
+          <a href="vm-setup.html" class="text-gray-600 hover:text-emerald-600 transition-colors">VM Setup</a>
+          <a href="ssh-troubleshooting.html" class="text-gray-600 hover:text-emerald-600 transition-colors">SSH Troubleshooting</a>
+          <a href="deployment.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Deployment</a>
+          <a href="features.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Features</a>
+          <a href="security.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Security</a>
+          <a href="faq.html" class="text-gray-600 hover:text-emerald-600 transition-colors">FAQ</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-btn"
+          class="md:hidden p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <svg id="icon-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-1">
+        <a href="getting-started.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Getting Started</a>
+        <a href="vm-setup.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">VM Setup</a>
+        <a href="ssh-troubleshooting.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">SSH Troubleshooting</a>
+        <a href="deployment.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Deployment</a>
+        <a href="features.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Features</a>
+        <a href="security.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">Security</a>
+        <a href="faq.html" class="block px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-emerald-600 transition-colors">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- Hero -->
+    <section class="text-center mb-16">
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
+        Supabyoi Documentation
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+        Self-hosted Supabase on your own VPS &mdash; deployed in minutes, managed with ease.
+      </p>
+      <a
+        href="getting-started.html"
+        class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-sm"
+      >
+        Get Started in 5 Minutes
+      </a>
+    </section>
+
+    <!-- Quick Links Grid -->
+    <section>
+      <h2 class="text-xl font-semibold text-gray-900 mb-6">Documentation</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <a href="getting-started.html" class="block border border-gray-200 rounded-lg p-6 hover:border-emerald-500 transition-colors group">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-emerald-50 rounded-md flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-1">Getting Started</h3>
+              <p class="text-sm text-gray-600">Prerequisites and your first deployment</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="vm-setup.html" class="block border border-gray-200 rounded-lg p-6 hover:border-emerald-500 transition-colors group">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-emerald-50 rounded-md flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-1">VM Setup</h3>
+              <p class="text-sm text-gray-600">Server requirements and SSH configuration</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="deployment.html" class="block border border-gray-200 rounded-lg p-6 hover:border-emerald-500 transition-colors group">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-emerald-50 rounded-md flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-1">Deployment</h3>
+              <p class="text-sm text-gray-600">How the deployment process works</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="features.html" class="block border border-gray-200 rounded-lg p-6 hover:border-emerald-500 transition-colors group">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-emerald-50 rounded-md flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-1">Features</h3>
+              <p class="text-sm text-gray-600">Everything included in your Supabase stack</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="ssh-troubleshooting.html" class="block border border-gray-200 rounded-lg p-6 hover:border-emerald-500 transition-colors group">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-emerald-50 rounded-md flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-1">SSH Troubleshooting</h3>
+              <p class="text-sm text-gray-600">Fix common SSH connection issues</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="security.html" class="block border border-gray-200 rounded-lg p-6 hover:border-emerald-500 transition-colors group">
+          <div class="flex items-start space-x-3">
+            <div class="flex-shrink-0 w-8 h-8 bg-emerald-50 rounded-md flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
+              <svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors mb-1">Security</h3>
+              <p class="text-sm text-gray-600">How your infrastructure is protected</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <p>Built by Supabyoi</p>
+        <div class="flex items-center space-x-4">
+          <a href="https://app.supabyoi.com" class="hover:text-emerald-600 transition-colors">App</a>
+          <a href="https://supabyoi.com" class="hover:text-emerald-600 transition-colors">Website</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    (function () {
+      var btn = document.getElementById('menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('icon-open');
+      var iconClose = document.getElementById('icon-close');
+
+      btn.addEventListener('click', function () {
+        var isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          menu.classList.add('hidden');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.remove('hidden');
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

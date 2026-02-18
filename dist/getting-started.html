@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started - Supabyoi Docs</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="text-lg font-bold text-gray-900 hover:text-emerald-600 transition-colors">
+          Supabyoi Docs
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="getting-started.html" class="text-emerald-600 font-semibold">Getting Started</a>
+          <a href="vm-setup.html" class="text-gray-600 hover:text-emerald-600 transition-colors">VM Setup</a>
+          <a href="ssh-troubleshooting.html" class="text-gray-600 hover:text-emerald-600 transition-colors">SSH Troubleshooting</a>
+          <a href="deployment.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Deployment</a>
+          <a href="features.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Features</a>
+          <a href="security.html" class="text-gray-600 hover:text-emerald-600 transition-colors">Security</a>
+          <a href="faq.html" class="text-gray-600 hover:text-emerald-600 transition-colors">FAQ</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-emerald-600 hover:bg-gray-100 transition-colors"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+      <div class="px-4 py-3 space-y-1 text-sm font-medium">
+        <a href="getting-started.html" class="block px-3 py-2 rounded-md text-emerald-600 font-semibold bg-emerald-50">Getting Started</a>
+        <a href="vm-setup.html" class="block px-3 py-2 rounded-md text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition-colors">VM Setup</a>
+        <a href="ssh-troubleshooting.html" class="block px-3 py-2 rounded-md text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition-colors">SSH Troubleshooting</a>
+        <a href="deployment.html" class="block px-3 py-2 rounded-md text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition-colors">Deployment</a>
+        <a href="features.html" class="block px-3 py-2 rounded-md text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition-colors">Features</a>
+        <a href="security.html" class="block px-3 py-2 rounded-md text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition-colors">Security</a>
+        <a href="faq.html" class="block px-3 py-2 rounded-md text-gray-700 hover:text-emerald-600 hover:bg-gray-50 transition-colors">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page layout -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex gap-10">
+
+      <!-- Sidebar TOC (sticky on desktop, hidden on mobile) -->
+      <aside class="hidden lg:block w-56 flex-shrink-0">
+        <div class="sticky top-24">
+          <p class="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-3">On this page</p>
+          <nav class="space-y-1 text-sm">
+            <a href="#prerequisites" class="block py-1 text-gray-600 hover:text-emerald-600 transition-colors">Prerequisites</a>
+            <a href="#first-deployment" class="block py-1 text-gray-600 hover:text-emerald-600 transition-colors">Your First Deployment</a>
+            <a href="#what-gets-deployed" class="block py-1 text-gray-600 hover:text-emerald-600 transition-colors">What Gets Deployed</a>
+            <a href="#next-steps" class="block py-1 text-gray-600 hover:text-emerald-600 transition-colors">Next Steps</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="flex-1 max-w-4xl min-w-0">
+
+        <!-- Page header -->
+        <div class="mb-8">
+          <p class="text-sm font-medium text-emerald-600 mb-1">Documentation</p>
+          <h1 class="text-3xl font-bold text-gray-900 mb-3">Getting Started</h1>
+          <p class="text-lg text-gray-500 leading-relaxed">
+            Deploy a fully-managed, self-hosted Supabase instance on your own VPS in minutes. No Docker expertise required.
+          </p>
+        </div>
+
+        <!-- Prerequisites -->
+        <section id="prerequisites">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Prerequisites</h2>
+          <p class="text-gray-600 mb-5 leading-relaxed">
+            Before you deploy your first Supabase instance, make sure your VPS meets these requirements. Supabyoi handles the installation automatically — you just need a clean server.
+          </p>
+
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700">
+                <strong class="text-gray-900">Ubuntu VPS</strong> — Tested and recommended. Other Linux distributions are detected but Ubuntu is the primary supported target.
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700">
+                <strong class="text-gray-900">Minimum 4 GB RAM</strong> — Each Supabase instance requires approximately 4 GB of RAM for all services to run stably.
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700">
+                <strong class="text-gray-900">Root SSH access</strong> — You'll need an RSA or Ed25519 private key with root (or sudo-capable) access to your server.
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700">
+                <strong class="text-gray-900">Ports 80 and 443 free</strong> — Nothing else should be listening on these ports. Nginx will be configured to handle all HTTP/HTTPS traffic.
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+                <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-gray-700">
+                <strong class="text-gray-900">Docker not required</strong> — Supabyoi automatically installs Docker and Docker Compose during the deployment process.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="border-t border-gray-200 my-8"></div>
+
+        <!-- Your First Deployment -->
+        <section id="first-deployment">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Your First Deployment</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Follow these steps to go from a blank VPS to a fully running Supabase instance. The entire process typically takes 5–10 minutes.
+          </p>
+
+          <ol class="space-y-8">
+
+            <!-- Step 1 -->
+            <li class="flex gap-5">
+              <div class="flex-shrink-0 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold">1</div>
+                <div class="flex-1 w-px bg-gray-200 mt-2"></div>
+              </div>
+              <div class="pb-6">
+                <h3 class="font-semibold text-gray-900 mb-1">Sign up</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  Create your account at
+                  <a href="https://app.supabyoi.com" class="text-emerald-600 font-medium hover:underline" target="_blank" rel="noopener noreferrer">app.supabyoi.com</a>.
+                  No credit card required to get started.
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 2 -->
+            <li class="flex gap-5">
+              <div class="flex-shrink-0 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold">2</div>
+                <div class="flex-1 w-px bg-gray-200 mt-2"></div>
+              </div>
+              <div class="pb-6">
+                <h3 class="font-semibold text-gray-900 mb-1">Add your VM</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                  Navigate to the VMs section and click "Add VM". Enter your server's IP address, SSH port (default: 22), SSH username, and paste your private key. Supabyoi stores keys encrypted at rest.
+                </p>
+                <!-- SCREENSHOT: Add VM form -->
+              </div>
+            </li>
+
+            <!-- Step 3 -->
+            <li class="flex gap-5">
+              <div class="flex-shrink-0 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold">3</div>
+                <div class="flex-1 w-px bg-gray-200 mt-2"></div>
+              </div>
+              <div class="pb-6">
+                <h3 class="font-semibold text-gray-900 mb-1">Wait for auto-hardening <span class="text-gray-400 font-normal text-xs ml-1">~2 minutes</span></h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  After adding your VM, Supabyoi automatically runs a security hardening pass: creating a dedicated user, configuring SSH, installing required packages, and setting up firewall rules. You'll see the status update in the UI when it's done.
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 4 -->
+            <li class="flex gap-5">
+              <div class="flex-shrink-0 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold">4</div>
+                <div class="flex-1 w-px bg-gray-200 mt-2"></div>
+              </div>
+              <div class="pb-6">
+                <h3 class="font-semibold text-gray-900 mb-1">Deploy an instance</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                  Click "Deploy Instance" on your VM and choose a subdomain name. Your instance will be available at
+                  <code class="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-xs font-mono">https://{name}.supabyoi.com</code>.
+                  Supabyoi generates all credentials automatically — JWT secrets, API keys, database passwords.
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 5 -->
+            <li class="flex gap-5">
+              <div class="flex-shrink-0 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold">5</div>
+                <div class="flex-1 w-px bg-gray-200 mt-2"></div>
+              </div>
+              <div class="pb-6">
+                <h3 class="font-semibold text-gray-900 mb-1">Watch real-time logs</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                  Deployment progress streams live to your browser. Each step — Docker installation, container startup, health checks, TLS provisioning — is logged in real time so you always know what's happening.
+                </p>
+                <!-- SCREENSHOT: Deployment logs -->
+              </div>
+            </li>
+
+            <!-- Step 6 -->
+            <li class="flex gap-5">
+              <div class="flex-shrink-0 flex flex-col items-center">
+                <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold">6</div>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-1">Access your Supabase</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                  Once deployment completes, your Supabase Studio is live. Visit
+                  <code class="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-xs font-mono">https://{name}.supabyoi.com</code>
+                  to open the Studio UI, or use the API URL and credentials shown on the instance detail page.
+                </p>
+                <!-- SCREENSHOT: Running instance -->
+              </div>
+            </li>
+
+          </ol>
+        </section>
+
+        <div class="border-t border-gray-200 my-8"></div>
+
+        <!-- What Gets Deployed -->
+        <section id="what-gets-deployed">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">What Gets Deployed</h2>
+          <p class="text-gray-600 mb-5 leading-relaxed">
+            Each Supabase instance runs as 8 Docker services orchestrated by Docker Compose. All services are isolated per instance and port-mapped to avoid conflicts when running multiple instances on the same VM.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <span class="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-emerald-500"></span>
+              <div>
+                <p class="font-medium text-gray-900 text-sm">PostgreSQL</p>
+                <p class="text-gray-500 text-xs mt-0.5">Supabase-flavored Postgres with extensions pre-installed</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <span class="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-emerald-500"></span>
+              <div>
+                <p class="font-medium text-gray-900 text-sm">Kong</p>
+                <p class="text-gray-500 text-xs mt-0.5">API Gateway — routes and authenticates all API requests</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <span class="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-emerald-500"></span>
+              <div>
+                <p class="font-medium text-gray-900 text-sm">PostgREST</p>
+                <p class="text-gray-500 text-xs mt-0.5">Auto-generated REST API from your Postgres schema</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <span class="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-emerald-500"></span>
+              <div>
+                <p class="font-medium text-gray-900 text-sm">GoTrue (Auth)</p>
+                <p class="text-gray-500 text-xs mt-0.5">User authentication with JWTs, OAuth, magic links</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <span class="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-emerald-500"></span>
+              <div>
+                <p class="font-medium text-gray-900 text-sm">Realtime</p>
+                <p class="text-gray-500 text-xs mt-0.5">WebSocket server for live database change subscriptions</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <span class="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-emerald-500"></span>
+              <div>
+                <p class="font-medium text-gray-900 text-sm">Storage</p>
+                <p class="text-gray-500 text-xs mt-0.5">S3-compatible file storage with access policies</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <span class="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-emerald-500"></span>
+              <div>
+                <p class="font-medium text-gray-900 text-sm">Meta</p>
+                <p class="text-gray-500 text-xs mt-0.5">Postgres metadata API used by Studio for schema management</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <span class="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-emerald-500"></span>
+              <div>
+                <p class="font-medium text-gray-900 text-sm">Studio</p>
+                <p class="text-gray-500 text-xs mt-0.5">The official Supabase web UI — table editor, SQL editor, and more</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="border-t border-gray-200 my-8"></div>
+
+        <!-- Next Steps -->
+        <section id="next-steps">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Next Steps</h2>
+          <p class="text-gray-600 mb-5 leading-relaxed">
+            Once you have a running instance, explore these guides to get the most out of Supabyoi.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="vm-setup.html" class="group block p-5 rounded-xl border border-gray-200 hover:border-emerald-300 hover:shadow-sm transition-all">
+              <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center mb-3 group-hover:bg-emerald-100 transition-colors">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-900 text-sm mb-1 group-hover:text-emerald-700 transition-colors">VM Setup</h3>
+              <p class="text-gray-500 text-xs leading-relaxed">Detailed server requirements, recommended providers, and firewall configuration.</p>
+            </a>
+
+            <a href="deployment.html" class="group block p-5 rounded-xl border border-gray-200 hover:border-emerald-300 hover:shadow-sm transition-all">
+              <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center mb-3 group-hover:bg-emerald-100 transition-colors">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-900 text-sm mb-1 group-hover:text-emerald-700 transition-colors">Deployment</h3>
+              <p class="text-gray-500 text-xs leading-relaxed">How the deployment pipeline works under the hood, including the Go agent architecture.</p>
+            </a>
+
+            <a href="features.html" class="group block p-5 rounded-xl border border-gray-200 hover:border-emerald-300 hover:shadow-sm transition-all">
+              <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center mb-3 group-hover:bg-emerald-100 transition-colors">
+                <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-900 text-sm mb-1 group-hover:text-emerald-700 transition-colors">Features</h3>
+              <p class="text-gray-500 text-xs leading-relaxed">What's included — backups, multi-instance support, TLS, real-time logs, and more.</p>
+            </a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <p>Built by Supabyoi</p>
+        <div class="flex items-center gap-6">
+          <a href="https://app.supabyoi.com" class="hover:text-emerald-600 transition-colors" target="_blank" rel="noopener noreferrer">app.supabyoi.com</a>
+          <a href="https://supabyoi.com" class="hover:text-emerald-600 transition-colors" target="_blank" rel="noopener noreferrer">supabyoi.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    (function () {
+      var btn = document.getElementById('mobile-menu-button');
+      var menu = document.getElementById('mobile-menu');
+      var iconOpen = document.getElementById('icon-open');
+      var iconClose = document.getElementById('icon-close');
+
+      btn.addEventListener('click', function () {
+        var isOpen = !menu.classList.contains('hidden');
+        if (isOpen) {
+          menu.classList.add('hidden');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          menu.classList.remove('hidden');
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

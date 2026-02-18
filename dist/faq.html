@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - Supabyoi Docs</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Left: Brand -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-gray-900 font-bold text-lg">Supabyoi Docs</a>
+        </div>
+
+        <!-- Right: Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="getting-started.html" class="text-gray-600 hover:text-emerald-600 text-sm">Getting Started</a>
+          <a href="vm-setup.html" class="text-gray-600 hover:text-emerald-600 text-sm">VM Setup</a>
+          <a href="ssh-troubleshooting.html" class="text-gray-600 hover:text-emerald-600 text-sm">SSH Troubleshooting</a>
+          <a href="deployment.html" class="text-gray-600 hover:text-emerald-600 text-sm">Deployment</a>
+          <a href="features.html" class="text-gray-600 hover:text-emerald-600 text-sm">Features</a>
+          <a href="security.html" class="text-gray-600 hover:text-emerald-600 text-sm">Security</a>
+          <a href="faq.html" class="text-emerald-600 font-semibold text-sm">FAQ</a>
+        </div>
+
+        <!-- Mobile: Hamburger -->
+        <div class="md:hidden">
+          <button id="menu-toggle" type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none" aria-label="Toggle menu">
+            <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col space-y-3">
+          <a href="getting-started.html" class="text-gray-600 hover:text-emerald-600 text-sm">Getting Started</a>
+          <a href="vm-setup.html" class="text-gray-600 hover:text-emerald-600 text-sm">VM Setup</a>
+          <a href="ssh-troubleshooting.html" class="text-gray-600 hover:text-emerald-600 text-sm">SSH Troubleshooting</a>
+          <a href="deployment.html" class="text-gray-600 hover:text-emerald-600 text-sm">Deployment</a>
+          <a href="features.html" class="text-gray-600 hover:text-emerald-600 text-sm">Features</a>
+          <a href="security.html" class="text-gray-600 hover:text-emerald-600 text-sm">Security</a>
+          <a href="faq.html" class="text-emerald-600 font-semibold text-sm">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Frequently Asked Questions</h1>
+    <p class="text-gray-500 mb-10">Common questions about Supabyoi and self-hosting Supabase.</p>
+
+    <div class="divide-y divide-gray-200 border-t border-gray-200">
+
+      <!-- Q1 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">Can I use any VPS provider?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          Yes. Supabyoi works with any VPS provider — AWS EC2, DigitalOcean Droplets, Hetzner Cloud, Linode, Vultr, OVH, and others. The only requirement is SSH access to a Linux server.
+        </p>
+      </details>
+
+      <!-- Q2 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">What Linux distributions are supported?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          Ubuntu is the primary supported and recommended distribution. Other distros are detected (Debian, CentOS, RHEL, Fedora, Rocky, Alma, Alpine, Arch) but Ubuntu provides the most reliable experience.
+        </p>
+      </details>
+
+      <!-- Q3 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">How much RAM do I need?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          Minimum 4 GB RAM per Supabase instance. A server with 8 GB RAM can run 2 instances, 16 GB can run 4, and so on. The dashboard shows available capacity.
+        </p>
+      </details>
+
+      <!-- Q4 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">Do I need to install Docker?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          No. Docker and Docker Compose are automatically installed during the first deployment if they're not already present.
+        </p>
+      </details>
+
+      <!-- Q5 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">What happens if deployment fails?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          Click the "Retry Deployment" button to re-run the deployment from scratch. The system also performs up to 3 automatic retries with backoff. There's a 10-minute overall timeout.
+        </p>
+      </details>
+
+      <!-- Q6 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">Can I SSH into my server after hardening?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <div class="mt-4 text-gray-600 text-sm leading-relaxed space-y-2">
+          <p>
+            Yes. After hardening, SSH access moves to a new random port with user <code class="bg-gray-100 text-emerald-700 px-1 py-0.5 rounded text-xs font-mono">supabyoi</code>. The new SSH port and credentials are displayed on the VM detail page in your dashboard.
+          </p>
+          <p>
+            Example: <code class="bg-gray-100 text-emerald-700 px-1 py-0.5 rounded text-xs font-mono">ssh -i your_key -p NEW_PORT supabyoi@your-ip</code>
+          </p>
+        </div>
+      </details>
+
+      <!-- Q7 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">How are my SSH keys stored?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          SSH private keys are encrypted at rest using Supabase Vault (AES-256 via pgsodium). They are never stored in plaintext in the application database.
+        </p>
+      </details>
+
+      <!-- Q8 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">Can I run multiple Supabase instances on one VM?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          Yes. Each instance requires approximately 4 GB of RAM. The dashboard shows how many instances your VM can support based on available memory.
+        </p>
+      </details>
+
+      <!-- Q9 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">What Supabase services are included?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          All 8 core services: PostgreSQL (database), PostgREST (REST API), GoTrue (authentication), Realtime (WebSockets), Storage (file storage), Kong (API gateway), Meta (database management), and Studio (web UI).
+        </p>
+      </details>
+
+      <!-- Q10 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">How do backups work?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          Automatic hourly PostgreSQL backups are stored on Cloudflare R2. The backup restore UI is coming soon — contact support if you need to restore a backup now.
+        </p>
+      </details>
+
+      <!-- Q11 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">What ports need to be open?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          Ports 80 (HTTP) and 443 (HTTPS) must be open and not used by other services. Port 22 (or your SSH port) must be accessible for initial setup.
+        </p>
+      </details>
+
+      <!-- Q12 -->
+      <details class="group py-6">
+        <summary class="flex items-center justify-between cursor-pointer list-none">
+          <h2 class="text-base font-semibold text-gray-900 pr-4">Can I use my own domain?</h2>
+          <span class="flex-shrink-0 text-gray-400 group-open:text-emerald-600 transition-colors">
+            <svg class="h-5 w-5 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <p class="mt-4 text-gray-600 text-sm leading-relaxed">
+          Currently, all instances use subdomains of <code class="bg-gray-100 text-emerald-700 px-1 py-0.5 rounded text-xs font-mono">supabyoi.com</code> (e.g., <code class="bg-gray-100 text-emerald-700 px-1 py-0.5 rounded text-xs font-mono">myapp.supabyoi.com</code>). Custom domain support is planned for a future release.
+        </p>
+      </details>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 py-8 mt-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-sm">Built by Supabyoi</p>
+      <div class="flex items-center space-x-4 text-sm text-gray-500">
+        <a href="https://app.supabyoi.com" class="hover:text-emerald-600 transition-colors">app.supabyoi.com</a>
+        <span class="text-gray-300">|</span>
+        <a href="https://supabyoi.com" class="hover:text-emerald-600 transition-colors">supabyoi.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', isOpen);
+      iconOpen.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+  </script>
+
+</body>
+</html>

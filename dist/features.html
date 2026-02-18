@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features - Supabyoi Docs</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Left: Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-gray-900 font-bold text-lg hover:text-emerald-600 transition-colors">Supabyoi Docs</a>
+        </div>
+
+        <!-- Right: Desktop nav -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="getting-started.html" class="text-gray-600 hover:text-emerald-600 text-sm transition-colors">Getting Started</a>
+          <a href="vm-setup.html" class="text-gray-600 hover:text-emerald-600 text-sm transition-colors">VM Setup</a>
+          <a href="ssh-troubleshooting.html" class="text-gray-600 hover:text-emerald-600 text-sm transition-colors">SSH Troubleshooting</a>
+          <a href="deployment.html" class="text-gray-600 hover:text-emerald-600 text-sm transition-colors">Deployment</a>
+          <a href="features.html" class="text-emerald-600 font-semibold text-sm">Features</a>
+          <a href="security.html" class="text-gray-600 hover:text-emerald-600 text-sm transition-colors">Security</a>
+          <a href="faq.html" class="text-gray-600 hover:text-emerald-600 text-sm transition-colors">FAQ</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-emerald-600 focus:outline-none" aria-label="Toggle menu">
+            <svg id="hamburger-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-3 space-y-2">
+        <a href="getting-started.html" class="block text-gray-600 hover:text-emerald-600 text-sm py-1 transition-colors">Getting Started</a>
+        <a href="vm-setup.html" class="block text-gray-600 hover:text-emerald-600 text-sm py-1 transition-colors">VM Setup</a>
+        <a href="ssh-troubleshooting.html" class="block text-gray-600 hover:text-emerald-600 text-sm py-1 transition-colors">SSH Troubleshooting</a>
+        <a href="deployment.html" class="block text-gray-600 hover:text-emerald-600 text-sm py-1 transition-colors">Deployment</a>
+        <a href="features.html" class="block text-emerald-600 font-semibold text-sm py-1">Features</a>
+        <a href="security.html" class="block text-gray-600 hover:text-emerald-600 text-sm py-1 transition-colors">Security</a>
+        <a href="faq.html" class="block text-gray-600 hover:text-emerald-600 text-sm py-1 transition-colors">FAQ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main layout -->
+  <div class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex gap-12">
+
+      <!-- Sticky TOC sidebar (hidden on mobile) -->
+      <aside class="hidden lg:block w-56 flex-shrink-0">
+        <div class="sticky top-24">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">On this page</p>
+          <nav class="space-y-2">
+            <a href="#vm-management" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">VM Management</a>
+            <a href="#one-click-deploy" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">One-Click Deploy</a>
+            <a href="#studio-access" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Studio Access</a>
+            <a href="#credentials" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Credentials &amp; Quick Connect</a>
+            <a href="#monitoring" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Monitoring &amp; Diagnostics</a>
+            <a href="#event-timeline" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Event Timeline</a>
+            <a href="#backups" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Backups</a>
+            <a href="#start-stop" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Start &amp; Stop</a>
+            <a href="#multi-instance" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Multi-Instance Support</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Page content -->
+      <main class="flex-1 max-w-4xl">
+
+        <!-- Page heading -->
+        <div class="mb-10">
+          <h1 class="text-4xl font-bold text-gray-900 mb-3">Features</h1>
+          <p class="text-lg text-gray-600">Everything Supabyoi provides to deploy and manage your Supabase instances.</p>
+        </div>
+
+        <!-- VM Management -->
+        <section id="vm-management" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">VM Management</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Add and manage multiple VPS servers from a single dashboard. Supabyoi performs automatic security hardening the moment a VM is registered — no manual setup steps required.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Add and manage multiple VPS servers</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Automatic security hardening on registration</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>SSH connection verification before accepting a VM</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Capacity tracking shows available RAM for new instances</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- One-Click Deploy -->
+        <section id="one-click-deploy" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">One-Click Deploy</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Deploy a complete Supabase stack in minutes — no DevOps experience required. Supabyoi handles the entire provisioning pipeline automatically.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Full Supabase stack deployed in a single action</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Real-time deployment progress — watch each step as it completes</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>No manual configuration required</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Studio Access -->
+        <section id="studio-access" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Studio Access</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Each instance includes the full Supabase Studio web UI, available at
+            <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">studio-{name}.supabyoi.com</code>.
+            Access is authenticated — only the instance owner can view it.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Browse tables and run SQL queries</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Manage users and authentication settings</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Configure storage buckets and policies</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Owner-only authenticated access — no sharing credentials required</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Credentials & Quick Connect -->
+        <section id="credentials" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Credentials &amp; Quick Connect</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Your dashboard shows all the connection details you need to start building immediately.
+          </p>
+          <ul class="space-y-3 text-gray-700 mb-6">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>
+                <strong class="text-gray-900">API URL</strong> —
+                <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">https://{name}.supabyoi.com</code>
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span><strong class="text-gray-900">Anon (publishable) key</strong> — Safe for client-side use</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span><strong class="text-gray-900">Service role key</strong> — Server-side only, bypasses RLS</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span><strong class="text-gray-900">Database connection string</strong> — Direct PostgreSQL access</span>
+            </li>
+          </ul>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Quick Connect provides a ready-to-paste code snippet for
+            <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">@supabase/supabase-js</code>:
+          </p>
+          <div class="bg-gray-900 text-gray-100 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+            <pre><span class="text-emerald-400">import</span> <span class="text-gray-100">{ createClient }</span> <span class="text-emerald-400">from</span> <span class="text-amber-300">'@supabase/supabase-js'</span>
+
+<span class="text-emerald-400">const</span> <span class="text-blue-300">supabase</span> <span class="text-gray-400">=</span> <span class="text-yellow-300">createClient</span><span class="text-gray-400">(</span>
+  <span class="text-amber-300">'https://{name}.supabyoi.com'</span><span class="text-gray-400">,</span>
+  <span class="text-amber-300">'your-anon-key'</span>
+<span class="text-gray-400">)</span></pre>
+          </div>
+        </section>
+
+        <!-- Monitoring & Diagnostics -->
+        <section id="monitoring" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Monitoring &amp; Diagnostics</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Run on-demand health diagnostics across all 8 services in your Supabase stack. Get an instant snapshot of what is running and what is not.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Health checks for all 8 compose services: Postgres, Kong, REST, Auth, Realtime, Storage, Meta, Studio</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Service status and response latency</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Resource usage — disk, CPU, and memory</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Event Timeline -->
+        <section id="event-timeline" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Event Timeline</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            A full audit log of every significant event in your instance's lifecycle. Nothing is hidden.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Deployment start and completion events</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Restarts and stop/start actions</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Failure events with error context</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Configuration changes</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Backups -->
+        <section id="backups" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Backups</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Your data is automatically protected with hourly PostgreSQL backups stored on Cloudflare R2.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Automatic hourly PostgreSQL backups</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Stored on Cloudflare R2 for durability and low-cost retention</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>
+                <span class="text-amber-600 font-medium">Note:</span> Restore UI coming soon
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Start & Stop -->
+        <section id="start-stop" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Start &amp; Stop</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Pause instances without losing data. Stop an instance to free VM resources and restart it at any time to pick up exactly where you left off.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Stop to reclaim RAM and CPU on shared VMs</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>All data and configuration preserved across stop/start cycles</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Start resumes the full stack in seconds</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Multi-Instance Support -->
+        <section id="multi-instance" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Multi-Instance Support</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Run multiple independent Supabase instances on a single VM. Each instance is fully isolated with its own ports and database.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Multiple instances per VM — maximize hardware utilization</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Each instance requires approximately 4 GB RAM</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Fully isolated with separate port allocations and databases</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span>Capacity tracking prevents over-provisioning</span>
+            </li>
+          </ul>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 py-8 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">Built by Supabyoi</p>
+        <div class="flex items-center gap-6">
+          <a href="https://app.supabyoi.com" class="text-gray-500 hover:text-emerald-600 text-sm transition-colors">app.supabyoi.com</a>
+          <a href="https://supabyoi.com" class="text-gray-500 hover:text-emerald-600 text-sm transition-colors">supabyoi.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    btn.addEventListener('click', () => {
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        hamburger.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        menu.classList.remove('hidden');
+        hamburger.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>
