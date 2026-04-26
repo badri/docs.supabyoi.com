@@ -260,6 +260,9 @@
                   <code class="bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-xs font-mono">https://{name}.supabyoi.com</code>
                   to open the Studio UI, or use the API URL and credentials shown on the instance detail page.
                 </p>
+                <div class="rounded-md border border-yellow-200 bg-yellow-50 p-3 mb-3 text-sm text-yellow-800">
+                  <strong>Use the keys from your Supabyoi instance page</strong>, not the ones in Studio's "Connect to your project" panel. Studio still shows older JWT-format keys for backward compatibility — they work today but are scheduled for removal in a future Supabase release. The <code class="bg-yellow-100 px-1 py-0.5 rounded text-xs font-mono">sb_publishable_*</code> / <code class="bg-yellow-100 px-1 py-0.5 rounded text-xs font-mono">sb_secret_*</code> keys shown in Supabyoi are the future-proof format.
+                </div>
                 <img src="images/instance-detail.png" alt="Running Supabase instance with credentials and Quick Connect code" class="rounded-lg border border-gray-200 shadow-sm mt-3" loading="lazy" />
               </div>
             </li>
