@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCP - Supabyoi Docs</title>
+  <meta name="description" content="Connect AI coding assistants (Claude Code, Cursor) to your self-hosted Supabase instance via the Model Context Protocol (MCP) gateway." />
+  <link rel="canonical" href="https://docs.supabyoi.com/mcp.html" />
+  <meta property="og:title" content="MCP — Supabyoi Docs" />
+  <meta property="og:description" content="Connect AI coding assistants (Claude Code, Cursor) to your self-hosted Supabase instance via the Model Context Protocol (MCP) gateway." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://docs.supabyoi.com/mcp.html" />
+  <meta property="og:site_name" content="Supabyoi Docs" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="MCP — Supabyoi Docs" />
+  <meta name="twitter:description" content="Connect AI coding assistants (Claude Code, Cursor) to your self-hosted Supabase instance via the Model Context Protocol (MCP) gateway." />
+  <link rel="stylesheet" href="output.css" />
+</head>
+<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Left: Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="text-gray-900 font-bold text-lg hover:text-emerald-600 transition-colors">Supabyoi Docs</a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+          <a href="getting-started.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Getting Started</a>
+          <a href="vm-setup.html" class="text-gray-700 hover:text-emerald-600 transition-colors">VM Setup</a>
+          <a href="ssh-troubleshooting.html" class="text-gray-700 hover:text-emerald-600 transition-colors">SSH Troubleshooting</a>
+          <a href="deployment.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Deployment</a>
+          <a href="features.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Features</a>
+          <a href="mcp.html" class="text-emerald-600">MCP</a>
+          <a href="security.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Security</a>
+          <a href="faq.html" class="text-gray-700 hover:text-emerald-600 transition-colors">FAQ</a>
+          <a href="roadmap.html" class="text-gray-700 hover:text-emerald-600 transition-colors">Roadmap</a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" type="button" class="text-gray-600 hover:text-emerald-600 focus:outline-none" aria-label="Toggle menu">
+            <svg id="hamburger-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+      <div class="px-4 py-3 space-y-2">
+        <a href="getting-started.html" class="block text-gray-600 hover:text-emerald-600 text-sm font-medium py-1 transition-colors">Getting Started</a>
+        <a href="vm-setup.html" class="block text-gray-600 hover:text-emerald-600 text-sm font-medium py-1 transition-colors">VM Setup</a>
+        <a href="ssh-troubleshooting.html" class="block text-gray-600 hover:text-emerald-600 text-sm font-medium py-1 transition-colors">SSH Troubleshooting</a>
+        <a href="deployment.html" class="block text-gray-600 hover:text-emerald-600 text-sm font-medium py-1 transition-colors">Deployment</a>
+        <a href="features.html" class="block text-gray-600 hover:text-emerald-600 text-sm font-medium py-1 transition-colors">Features</a>
+        <a href="mcp.html" class="block text-emerald-600 font-semibold text-sm py-1">MCP</a>
+        <a href="security.html" class="block text-gray-600 hover:text-emerald-600 text-sm font-medium py-1 transition-colors">Security</a>
+        <a href="faq.html" class="block text-gray-600 hover:text-emerald-600 text-sm font-medium py-1 transition-colors">FAQ</a>
+        <a href="roadmap.html" class="block text-gray-600 hover:text-emerald-600 text-sm font-medium py-1 transition-colors">Roadmap</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main layout -->
+  <div class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex gap-12">
+
+      <!-- Sticky TOC sidebar (hidden on mobile) -->
+      <aside class="hidden lg:block w-56 flex-shrink-0">
+        <div class="sticky top-24">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">On this page</p>
+          <nav class="space-y-2">
+            <a href="#overview" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Overview</a>
+            <a href="#security" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Security Warning</a>
+            <a href="#enabling" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Enabling MCP</a>
+            <a href="#endpoint" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Endpoint &amp; Auth</a>
+            <a href="#claude-code" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Claude Code</a>
+            <a href="#cursor" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Cursor</a>
+            <a href="#other-clients" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Other Clients</a>
+            <a href="#verify" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">Verifying the Connection</a>
+            <a href="#how-it-works" class="block text-sm text-gray-600 hover:text-emerald-600 transition-colors py-0.5">How It Works</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Page content -->
+      <main class="flex-1 max-w-4xl">
+
+        <!-- Page heading -->
+        <div class="mb-10">
+          <h1 class="text-4xl font-bold text-gray-900 mb-3">MCP — Model Context Protocol</h1>
+          <p class="text-lg text-gray-600">Connect AI coding assistants like Claude Code and Cursor directly to your Supabase instance.</p>
+        </div>
+
+        <!-- Overview -->
+        <section id="overview" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Overview</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Supabyoi exposes the Supabase MCP (Model Context Protocol) server through the instance's Kong API gateway.
+            Once enabled, AI tools can query your database, inspect schema, run SQL, and manage your Supabase project
+            without leaving your editor — all protected by the same gateway key-auth that secures every other API endpoint.
+          </p>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            The MCP server is built into Supabase Studio and speaks the
+            <a href="https://modelcontextprotocol.io/docs/concepts/transports#streamable-http" class="text-emerald-600 hover:underline" target="_blank" rel="noopener noreferrer">Streamable HTTP</a>
+            transport — a POST endpoint that can respond with either JSON or a Server-Sent Events stream. Both formats are
+            supported by all major MCP clients.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Transport</p>
+              <p class="text-sm text-gray-700">Streamable HTTP (POST)</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Auth</p>
+              <p class="text-sm text-gray-700">apikey header — service_role key</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+              <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">Gateway</p>
+              <p class="text-sm text-gray-700">Kong key-auth + ACL (admin only)</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Security Warning -->
+        <section id="security" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Security Warning</h2>
+
+          <div class="rounded-lg border border-amber-200 bg-amber-50 p-5 mb-6">
+            <div class="flex items-start gap-3">
+              <svg class="flex-shrink-0 h-5 w-5 text-amber-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <div>
+                <p class="text-sm font-semibold text-amber-800 mb-2">MCP grants broad database and administrative access</p>
+                <ul class="text-sm text-amber-700 space-y-1.5 list-none">
+                  <li>• The MCP endpoint requires your <strong>service_role key</strong> — the same key that bypasses Row Level Security. Any AI tool holding this key can read, write, and delete any data in your database.</li>
+                  <li>• Treat the service_role key like a root database password. Do not commit it to version control, do not share it, and rotate it immediately if it is ever exposed.</li>
+                  <li>• Enable MCP only when you are actively using an AI assistant with your instance. Disable it again when you are done.</li>
+                  <li>• Supabyoi applies Kong key-auth at the gateway — unauthenticated requests are rejected before reaching the MCP server. No additional IP restriction or SSH tunneling is required.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Enabling MCP -->
+        <section id="enabling" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Enabling MCP</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            MCP is disabled by default. Enable it from the instance Settings page:
+          </p>
+          <ol class="space-y-3 text-gray-700 mb-4">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold flex items-center justify-center mt-0.5">1</span>
+              <span>Open the instance detail page and click <strong>Settings</strong>.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold flex items-center justify-center mt-0.5">2</span>
+              <span>Under <strong>Advanced Configuration</strong>, toggle <strong>Enable MCP Server</strong> on.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold flex items-center justify-center mt-0.5">3</span>
+              <span>Supabyoi reconfigures the Kong gateway and restarts the router. The process takes roughly 10–15 seconds. Once complete, the
+                <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">/mcp</code> route becomes active on your instance URL.</span>
+            </li>
+          </ol>
+          <p class="text-gray-600 text-sm">
+            To disable MCP, toggle the setting off. Kong will be reconfigured to drop all
+            <code class="bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded text-xs font-mono">/mcp</code> requests.
+          </p>
+        </section>
+
+        <!-- Endpoint & Auth -->
+        <section id="endpoint" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Endpoint &amp; Authentication</h2>
+
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Endpoint URL</h3>
+          <p class="text-gray-700 leading-relaxed mb-3">
+            The MCP endpoint is always at the root of your instance URL:
+          </p>
+          <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-6 text-gray-100">
+            <span class="text-emerald-400">https://</span><span class="text-yellow-300">&lt;subdomain&gt;</span><span class="text-emerald-400">.supabyoi.com</span><span class="text-white">/mcp</span>
+          </div>
+          <p class="text-gray-600 text-sm mb-6">
+            Replace <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">&lt;subdomain&gt;</code> with your instance subdomain, shown on the instance detail page.
+          </p>
+
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Authentication</h3>
+          <p class="text-gray-700 leading-relaxed mb-3">
+            Every request must include an
+            <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">apikey</code>
+            header set to your instance's <strong>Secret Key</strong> (the <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">sb_secret_…</code> token).
+            This is the <em>service_role</em> key — the same one shown in the Credentials panel on your instance page.
+          </p>
+          <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4 text-gray-100">
+            <span class="text-gray-400">apikey: </span><span class="text-yellow-300">sb_secret_xxxxxxxxxxxxxxxxxxxx</span>
+          </div>
+          <p class="text-gray-600 text-sm">
+            Do <strong>not</strong> use the <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">Authorization: Bearer …</code> header — Kong's key-auth plugin reads
+            <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">apikey</code>, not <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">Authorization</code>, on the MCP route.
+          </p>
+        </section>
+
+        <!-- Claude Code -->
+        <section id="claude-code" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Connecting Claude Code</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Add the server to your project's
+            <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">.mcp.json</code>
+            file (or to <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">~/.claude/mcp.json</code> for a user-level config that applies to all projects):
+          </p>
+          <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4 text-gray-100">
+            <pre>{
+  <span class="text-yellow-300">"mcpServers"</span>: {
+    <span class="text-yellow-300">"supabyoi"</span>: {
+      <span class="text-yellow-300">"type"</span>: <span class="text-emerald-400">"http"</span>,
+      <span class="text-yellow-300">"url"</span>: <span class="text-emerald-400">"https://&lt;subdomain&gt;.supabyoi.com/mcp"</span>,
+      <span class="text-yellow-300">"headers"</span>: {
+        <span class="text-yellow-300">"apikey"</span>: <span class="text-emerald-400">"sb_secret_xxxxxxxxxxxxxxxxxxxx"</span>
+      }
+    }
+  }
+}</pre>
+          </div>
+          <p class="text-gray-600 text-sm mb-2">
+            After saving, restart Claude Code (or run <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">/mcp</code> in a session to reload MCP servers). The Supabase tools — SQL runner, table browser, schema inspector — will be available to the assistant.
+          </p>
+          <div class="rounded-lg border border-blue-100 bg-blue-50 p-4 mt-4">
+            <p class="text-sm text-blue-700">
+              <strong class="text-blue-800">Tip:</strong> Use a project-level
+              <code class="bg-blue-100 text-blue-800 px-1 py-0.5 rounded text-xs font-mono">.mcp.json</code>
+              (and add it to <code class="bg-blue-100 text-blue-800 px-1 py-0.5 rounded text-xs font-mono">.gitignore</code>) rather than a global config.
+              That keeps different projects pointing at different instances without collisions.
+            </p>
+          </div>
+        </section>
+
+        <!-- Cursor -->
+        <section id="cursor" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Connecting Cursor</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Open Cursor's MCP settings (<strong>Cursor → Settings → MCP</strong>) and add a new server entry, or edit
+            <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">~/.cursor/mcp.json</code> directly:
+          </p>
+          <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4 text-gray-100">
+            <pre>{
+  <span class="text-yellow-300">"mcpServers"</span>: {
+    <span class="text-yellow-300">"supabyoi"</span>: {
+      <span class="text-yellow-300">"url"</span>: <span class="text-emerald-400">"https://&lt;subdomain&gt;.supabyoi.com/mcp"</span>,
+      <span class="text-yellow-300">"headers"</span>: {
+        <span class="text-yellow-300">"apikey"</span>: <span class="text-emerald-400">"sb_secret_xxxxxxxxxxxxxxxxxxxx"</span>
+      }
+    }
+  }
+}</pre>
+          </div>
+          <p class="text-gray-600 text-sm">
+            Cursor's MCP client uses the Streamable HTTP transport automatically when a
+            <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">url</code>
+            is provided without a <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">command</code> field.
+          </p>
+        </section>
+
+        <!-- Other Clients -->
+        <section id="other-clients" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Other MCP Clients</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Any MCP client that supports the Streamable HTTP transport can connect. The canonical configuration is:
+          </p>
+          <ul class="space-y-2 text-gray-700 mb-6">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span><strong>URL:</strong> <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">https://&lt;subdomain&gt;.supabyoi.com/mcp</code></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span><strong>Method:</strong> POST</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span><strong>Header:</strong> <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">apikey: &lt;service_role_key&gt;</code></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+              <span><strong>Content-Type:</strong> <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">application/json</code></span>
+            </li>
+          </ul>
+          <p class="text-gray-600 text-sm">
+            The gateway sets <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">response_buffering: false</code> so SSE streams are forwarded in real time. Clients that
+            request <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">Accept: text/event-stream</code> will receive a streaming response; others receive a
+            single JSON envelope.
+          </p>
+        </section>
+
+        <!-- Verifying the connection -->
+        <section id="verify" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">Verifying the Connection</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Send an <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">initialize</code> request to confirm the endpoint is reachable and the key is accepted:
+          </p>
+          <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4 text-gray-100">
+            <pre><span class="text-gray-400">curl -X POST \
+  https://&lt;subdomain&gt;.supabyoi.com/mcp \
+  -H "Content-Type: application/json" \
+  -H "apikey: sb_secret_xxxxxxxxxxxxxxxxxxxx" \
+  -d '</span><span class="text-yellow-300">{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2024-11-05",
+      "capabilities": {},
+      "clientInfo": { "name": "test", "version": "1.0" }
+    }
+  }</span><span class="text-gray-400">'</span></pre>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-3">A successful response looks like:</p>
+          <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-x-auto mb-4 text-gray-100">
+            <pre><span class="text-emerald-400">{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "protocolVersion": "2024-11-05",
+    "serverInfo": { "name": "Supabase MCP Server", "version": "0.7.0" },
+    "capabilities": { ... }
+  }
+}</span></pre>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-2">Common errors:</p>
+          <ul class="space-y-2 text-gray-700 text-sm mb-4">
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-red-400 flex-shrink-0"></span>
+              <span><strong>401 Unauthorized</strong> — wrong or missing <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">apikey</code> header. Check that you are using the <em>service_role</em> (secret) key, not the anon (publishable) key.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-red-400 flex-shrink-0"></span>
+              <span><strong>404 Not Found</strong> — MCP is not enabled on this instance. Toggle it on in Settings first.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-red-400 flex-shrink-0"></span>
+              <span><strong>403 Forbidden</strong> — the key is valid but not in the <em>admin</em> ACL group. This should not happen with the service_role key; if it does, contact support.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- How it works -->
+        <section id="how-it-works" class="mb-12 scroll-mt-24">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 pb-2 border-b border-gray-100">How It Works</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Supabase Studio (running on each instance at port 3000) includes a built-in MCP server at
+            <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">/api/mcp</code>.
+            When you enable MCP in Settings, Supabyoi:
+          </p>
+          <ol class="space-y-3 text-gray-700 mb-4">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-500 text-xs font-semibold flex items-center justify-center mt-0.5">1</span>
+              <span>Regenerates the Kong declarative config to add an <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">/mcp</code> service route pointing at <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">studio:3000/api/mcp</code>.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-500 text-xs font-semibold flex items-center justify-center mt-0.5">2</span>
+              <span>Attaches <strong>key-auth</strong> (requires <code class="bg-gray-100 text-gray-700 px-1 py-0.5 rounded text-xs font-mono">apikey</code> header) and <strong>ACL</strong> (allow: admin group only) plugins to the route, so only the service_role key can reach it.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-500 text-xs font-semibold flex items-center justify-center mt-0.5">3</span>
+              <span>Restarts the Kong container so it picks up the updated config, then health-checks the instance. If anything fails, the old config is automatically restored.</span>
+            </li>
+          </ol>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            The route is configured with <code class="bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono">response_buffering: false</code>
+            so that SSE streams are forwarded immediately through Kong without buffering.
+            No SSH tunnel or IP-level restriction is required — authentication is handled entirely at the Kong gateway layer.
+          </p>
+          <div class="bg-gray-50 rounded-lg p-5 border border-gray-200 font-mono text-xs text-gray-600 overflow-x-auto">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="text-gray-800 font-semibold">MCP Client</span>
+                <span class="text-gray-400">──POST /mcp──▶</span>
+                <span class="text-emerald-700 font-semibold">Kong</span>
+                <span class="text-gray-400">──▶ key-auth + ACL ──▶</span>
+                <span class="text-blue-700 font-semibold">Studio :3000/api/mcp</span>
+              </div>
+              <div class="text-gray-400 pl-2">
+                apikey: sb_secret_…
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                (service_role → admin group ✓)
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger-icon');
+    const closeIco = document.getElementById('close-icon');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden');
+      hamburger.classList.toggle('hidden', !open);
+      closeIco.classList.toggle('hidden', open);
+    });
+  </script>
+</body>
+</html>
